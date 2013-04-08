@@ -18,5 +18,5 @@ node.packages.items.each do |pkg|
     action :install
     provider provider[:class]
   end
-  send("initialize_#{provide[:name]}_#{pkg}") if node.packages.initialize.include?(pkg)
+  send("initialize_#{provider[:name]}_#{pkg}") if node.packages.initialize.include?(pkg)
 end
